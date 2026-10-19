@@ -40,8 +40,7 @@ const tbody=document.getElementById('cluster-rows');
 clusterGroup.labels.forEach((label,i)=>{
  const rows=[];for(let j=0;j<clusterGroup.values.length;j++)if(clusterGroup.values[j]===i)rows.push(D.custom[j]);
  const subtype={},cancer={};rows.forEach(r=>{subtype[r[2]]=(subtype[r[2]]||0)+1;cancer[r[1]]=(cancer[r[1]]||0)+1;});
- subtype.__total=rows.length;cancer.__total=rows.length;
- const tr=document.createElement('tr'),nameCell=document.createElement('td'),chip=document.createElement('span');chip.className='cluster-chip';chip.style.backgroundColor=clusterGroup.colors[i];nameCell.append(chip,document.createTextNode(label));tr.append(nameCell);
+  const tr=document.createElement('tr'),nameCell=document.createElement('td'),chip=document.createElement('span');chip.className='cluster-chip';chip.style.backgroundColor=clusterGroup.colors[i];nameCell.append(chip,document.createTextNode(label));tr.append(nameCell);
  [rows.length.toLocaleString(),summarize(Object.fromEntries(Object.entries(subtype).sort((a,b)=>b[1]-a[1]).slice(0,2)),rows.length),summarize(cancer,rows.length)].forEach(value=>{const td=document.createElement('td');td.textContent=value;tr.appendChild(td);});tbody.appendChild(tr);
 });
 </script></body></html>
