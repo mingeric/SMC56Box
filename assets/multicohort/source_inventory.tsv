@@ -1,0 +1,5 @@
+cohort	source_accession_or_collection	n_cells	n_donors	n_samples	feature_coverage	UMAP_coordinates	claim_boundary
+CRC	GEO:GSE132465; local reprocessed object	61024	23	33	SMC5;SMC6;NSMCE1;NSMCE2;NSMCE3;NSMCE4A;EID3;SLF1;SLF2;SIMC1	Full-transcriptome Harmony/PCA source embedding	Paired tumor-normal inference only for donors with both conditions; donor is replicate
+BRCA	CELLxGENE breast cancer atlas; three dataset IDs in local object	59990	38	3	SMC5;SMC6;NSMCE1;NSMCE2;NSMCE3;NSMCE4A;EID3;SLF1;SLF2;SIMC1	Source full-transcriptome embedding reused	Cohort-level descriptive; no cross-cohort inference
+LUAD_GSE131907	GEO:GSE131907; processed full-transcriptome atlas	206323	NA	58	SMC5;SMC6;NSMCE1;NSMCE2;NSMCE3;NSMCE4A;EID3;SLF1;SLF2;SIMC1	Source full-transcriptome embedding reused	Cohort-level descriptive; source donor ID unavailable
+LUAD	CELLxGENE LUAD histologic subtype atlas; DOI:10.1186/s40164-025-00740-6	117266	18	4	SMC5;SMC6;NSMCE1;NSMCE2;NSMCE3;NSMCE4A;EID3;SLF1;SLF2;SIMC1	Source full-transcriptome embedding reused	Cohort-level descriptive; NSMCE3 has zero detected counts in this cohort

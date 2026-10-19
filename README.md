@@ -1,13 +1,16 @@
-# SMC56Box
+# SMC5/6 multi-cancer single-cell visualizations
 
-Interactive 3D UMAP of 5,045 cells across BRCA, COAD, LUAD, and STAD, with SMC5/6 subunit and module overlays.
+Open the [all-visualizations dashboard](https://mingeric.github.io/SMC56Box/) for the expanded cohort overview, donor-level results, paired CRC analysis, and the 16-cancer targeted-panel view. The earlier [3D four-cancer page](https://mingeric.github.io/SMC56Box/four_cancer_3D_interactive.html) retains the 5,045-cell exploratory object whose source accession and patient/sample identifiers are unresolved.
 
-## View
+## Evidence included
 
-Open `index.html` in a browser or visit the [GitHub Pages visualization](https://mingeric.github.io/SMC56Box/). The page loads Plotly.js 2.35.2 from the Plotly CDN, so an internet connection is needed.
+- Four independent full-transcriptome cohorts: 444,603 cells across CRC, BRCA and LUAD. Each cohort retains its own source full-transcriptome UMAP; these are not a shared coordinate system.
+- Donor summaries for cohorts with donor identifiers and patient-paired tumor/normal tests in GSE132465.
+- A separate CELLxGENE Census targeted 10-gene panel across 16 cancer labels (5,346,273 cells). It has no full-transcriptome matrix and is not used for UMAPs.
+- Processed 444,603-cell feature table, source inventory, module contract, plots, and result tables in `assets/multicohort/`.
 
-## Cell groups
+## Interpretation
 
-The page opens colored by the 21 unsupervised Louvain clusters and can also color cells by cancer type or the 10 original cell subtype labels. Clustering uses the archived first 30 PCA dimensions (k=20, resolution=2.0); the 3D UMAP uses cosine distance, 10 neighbors, min_dist=0.01, and seed=42. All 5,045 cells in the archived object are shown; the page does not downsample this view. Twelve clusters are enriched for malignant epithelial labels (>80% of cells in each cluster); cluster numbers are computational labels, not validated cell identities.
+In paired colorectal samples from 10 patients, epithelial NSMCE1 showed a positive tumor-minus-normal shift (mean +0.350 within-cohort z units, BH q=0.0273 across the 14 features in that compartment). None of the four predefined module scores passed multiple-testing correction. This is a bounded gene-level signal, not evidence for uniform SMC5/6 complex elevation. Patient-level cell composition also differed between tumor and normal, so composition is relevant context.
 
-The original `cell_type` labels were inconsistent with the more specific `original_cell_type` annotations, so the page uses the 10 original subtype labels. This archived object has no patient or sample identifiers, and its source accession is unresolved. Cluster and cancer-type comparisons are exploratory cell-level descriptions, not patient-level inference.
+UMAP geometry is descriptive. Within-cohort gene z scores and the Census panel's within-panel count shares use different scales and must not be compared numerically. The original 5,045-cell four-cancer object is kept separate because its provenance and sample IDs are unresolved.
